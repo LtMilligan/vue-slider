@@ -28,6 +28,16 @@ createApp({
                 }
             ]
         }
-    }  
+    },
+    methods: {
+        // funzione per l'incremento dell'immagine all'infinito
+        nextImage(){
+            if(this.active_image == this.slides.length - 1) {
+                this.active_image = 0
+            }else {
+                this.active_image++;
+            }
+        }
+    }
 }).mount('#app')
 
