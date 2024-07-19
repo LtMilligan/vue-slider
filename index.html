@@ -17,6 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
+                    <!-- SRC e ALT vengono presi dall'array di oggetti tramite l'indice dell'immagine attiva -->
                     <img :src="slides[active_image].image" :alt="slides[active_image].title" />
                     <div class="text">
                         <h3>{{ slides[active_image].title }}</h3>
@@ -27,6 +28,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevImage()"></div>
                     <div class="next" @click="nextImage()"></div>
+                    <!-- Viene data la classe ACTIVE all'immagine laterale in base all'indice dell'immagine attiva confrontato con l'indice dell'immagine laterale -->
                     <div class="thumb" :class="active_image == index ? 'active' : ''" v-for="slide, index in slides">
                         <img :src="slide.image" :alt="slide.title">
                     </div>
